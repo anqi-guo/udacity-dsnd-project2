@@ -34,9 +34,9 @@ skills like ETL, and web development, which are also important for data scientis
 
 # Results
 Below is a snapshot of the main page
-![mainpage](https://github.com/anqi-guo/udacity-dsnd-project2/blob/main/mainpage.png)
+![mainpage](https://github.com/anqi-guo/udacity-dsnd-project2/blob/main/app/mainpage.png)
 Below is a snapshot of the classification result page
-![resultpage](https://github.com/anqi-guo/udacity-dsnd-project2/blob/main/resultpage.png)
+![resultpage](https://github.com/anqi-guo/udacity-dsnd-project2/blob/main/app/resultpage.png)
 
 # Licensing, Authors, and Acknowledgements
 The data was provided by [Appen](https://appen.com/)
