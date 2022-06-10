@@ -17,7 +17,12 @@ from sklearn.model_selection import GridSearchCV
 import pickle
 
 
-def load_data(database_filepath):
+def load_data(database_filepath: str):
+    """
+    load data from database and extract X, Y, and category names
+    :param database_filepath: filepath to database
+    :return: X, Y, and category names
+    """
     engine = create_engine(database_filepath)
     df = pd.read_sql_table('disaster_response', con=engine)
     X = df['message']
@@ -26,7 +31,12 @@ def load_data(database_filepath):
     return X, Y, category_names
 
 
-def tokenize(text):
+def tokenize(text: str):
+    """
+    clean and tokenize text
+    :param text: raw text
+    :return: cleaned and tokenized text list
+    """
     # replace url
     text = re.sub('http[^ ]+', 'urlplaceholder', text)
 
@@ -55,6 +65,10 @@ def tokenize(text):
 
 
 def build_model():
+    """
+    build classification model
+    :return: model
+    """
     pipeline = Pipeline([
         ('tfidf', TfidfVectorizer(tokenizer=tokenize)),
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
@@ -73,6 +87,14 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    evaluate the model
+    :param model: the classifier
+    :param X_test: x test data
+    :param Y_test: y test data
+    :param category_names: column names of y
+    :return: None
+    """
     Y_pred = model.predict(X_test)
     Y_pred_df = pd.DataFrame(Y_pred, columns=category_names)
     for col in category_names:
@@ -81,6 +103,12 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """
+    dump the model to specified location
+    :param model: the classifier
+    :param model_filepath: filepath to model
+    :return: None
+    """
     pickle.dump(model.best_estimator_, open(model_filepath, 'wb'))
 
 
