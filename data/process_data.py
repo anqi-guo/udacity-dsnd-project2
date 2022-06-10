@@ -52,6 +52,9 @@ def clean_data(df):
     # Remove duplicates
     df.drop_duplicates(inplace=True)
 
+    # Replace values 2 with 1
+    df.replace(2, 1, inplace=True)
+
     return df
 
 
