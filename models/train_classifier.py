@@ -22,7 +22,8 @@ def load_data(database_filepath):
     df = pd.read_sql_table('disaster_response', con=engine)
     X = df['message']
     Y = df.iloc[:, 4:]
-    return X, Y
+    category_names = Y.columns
+    return X, Y, category_names
 
 
 def tokenize(text):
@@ -59,17 +60,25 @@ def build_model():
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
 
-    return pipeline
+    # grid search is too slow on my computer, so I skip this part
+
+    parameters = {
+        'clf__estimator__n_estimators': [100],
+        'clf__estimator__min_samples_split': [2],
+        'clf__estimator__warm_start': [True]
+    }
+
+    cv = GridSearchCV(pipeline, parameters)
+
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
     Y_pred = model.predict(X_test)
-    for i in range(Y_test.shape[1]):
-        y_true = Y_test.iloc[:, i]
-        y_pred = Y_pred[:, i]
-        print('-' * 50)
-        print(Y_test.columns[i])
-        print(classification_report(y_true, y_pred))
+    Y_pred_df = pd.DataFrame(Y_pred, columns=category_names)
+    for col in category_names:
+        print(col)
+        print(classification_report(Y_test[col], Y_pred_df[col]))
 
 
 def save_model(model, model_filepath):
