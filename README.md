@@ -15,6 +15,7 @@ In this project, I trained a model that analyzes the content of the messages sen
 The model returns the most possible categories of the messages, which will then be directed to appropriate emergent agencies.
 
 # File Descriptions
+```
 |-- app
 |     |-- templates
 |     |     |-- master.html: this is the main page of the application
@@ -31,6 +32,7 @@ The model returns the most possible categories of the messages, which will then 
 |-- models
 |     |-- train_classifier.py: this is the python file that trains the classifier
 |     |-- ML Ppeline Preparation.ipynb
+```
 
 # Results
 Below is a snapshot of the main page
