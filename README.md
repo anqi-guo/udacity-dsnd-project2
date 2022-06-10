@@ -18,7 +18,7 @@ skills like ETL, and web development, which are also important for data scientis
   - templates
     - master.html: this is the main page of the application
     - go.html: this displays the classification result
-  - run.py: this is the python file that runs the application
+  - run.py: this is the python file that runs the application, type in `python app/run.py` in terminal to run the application
   - mainpage.png: this is the snapshot of main page of the application
   - resultpage.png: this is the snapshot of result page of the application
 - data
@@ -28,7 +28,7 @@ skills like ETL, and web development, which are also important for data scientis
   - process_data.py: this is the python file that does the etl
   - ETL Pipeline Preparation.ipynb
 - models
-  - train_classifier.py: this is the python file that trains the classifier
+  - train_classifier.py: this is the python file that trains the classifier, type in `python models/train_classifier.py sqlite:///data/DisasterResponse.db models/model.pkl` in terminal to run the model
   - model.pkl: this is the final model
   - ML Ppeline Preparation.ipynb
 
