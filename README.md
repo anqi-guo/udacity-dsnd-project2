@@ -41,10 +41,6 @@ Below is a snapshot of the classification result page
 ![resultpage](https://github.com/anqi-guo/udacity-dsnd-project2/blob/main/app/resultpage.png)
 
 # Commands
-- run the application
-```
-python app/run.py
-```
 - process the data
 ```
 python data/process_data.py data/messages.csv data/categories.csv sqlite:///data/DisasterResponse.db
@@ -52,6 +48,10 @@ python data/process_data.py data/messages.csv data/categories.csv sqlite:///data
 - train the classifier
 ```
 python models/train_classifier.py sqlite:///data/DisasterResponse.db models/model.pkl
+```
+- run the application
+```
+python app/run.py
 ```
 
 # Licensing, Authors, and Acknowledgements
