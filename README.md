@@ -11,8 +11,8 @@ Libraries required for this project can be found in `requirements.txt`
 
 # Project Motivation
 This is the second project of Udacity Data Scientist Nano Degree program, aiming to practice our skills on using Scikit-learn's `Pipeline`. 
-Pipeline is a productivity tool that collapses all preprocessing and modeling steps into a one function call. Besides, we practice other
-skills like ETL, and web development, which are also important for data scientist.
+In this project, I trained a model that analyzes the content of the messages sent by people in disasters. 
+The model returns the most possible categories of the messages, which will then be directed to appropriate emergent agencies.
 
 # File Descriptions
 - app
@@ -41,11 +41,11 @@ Below is a snapshot of the classification result page
 
 # Commands
 - run the application
-`python app/run.py`
+```python app/run.py```
 - process the data
-`python data/process_data.py data/messages.csv data/categories.csv sqlite:///data/DisasterResponse.db`
-- run the model
-`python models/train_classifier.py sqlite:///data/DisasterResponse.db models/model.pkl`
+```python data/process_data.py data/messages.csv data/categories.csv sqlite:///data/DisasterResponse.db```
+- train the classifier
+```python models/train_classifier.py sqlite:///data/DisasterResponse.db models/model.pkl```
 
 # Licensing, Authors, and Acknowledgements
 The data was provided by [Appen](https://appen.com/)
