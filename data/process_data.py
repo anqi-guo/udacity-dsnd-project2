@@ -63,7 +63,7 @@ def save_data(df, database_filename):
     :return: None
     '''
     engine = create_engine(database_filename)
-    df.to_sql('disaster_response', engine, index=False)
+    df.to_sql('disaster_response', engine, index=False, if_exists='replace')
 
 
 def main():

@@ -25,7 +25,7 @@ skills like ETL, and web development, which are also important for data scientis
   - categories.csv: this contains all the categories of the messages
   - messages.csv: this contains all the messages content
   - DisasterResponse.db: this is the sqlite db file that contains cleaned data
-  - process_data.py: this is the python file that does the etl
+  - process_data.py: this is the python file that does the etl, type in `python data/process_data.py data/messages.csv data/categories.csv sqlite:///data/DisasterResponse.db` in terminal to process the data
   - ETL Pipeline Preparation.ipynb
 - models
   - train_classifier.py: this is the python file that trains the classifier, type in `python models/train_classifier.py sqlite:///data/DisasterResponse.db models/model.pkl` in terminal to run the model
