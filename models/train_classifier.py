@@ -60,12 +60,11 @@ def build_model():
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
 
-    # grid search is too slow on my computer, so I skip this part
-
+    # grid search
     parameters = {
-        'clf__estimator__n_estimators': [100],
-        'clf__estimator__min_samples_split': [2],
-        'clf__estimator__warm_start': [True]
+        'clf__estimator__n_estimators': [10, 100],
+        'clf__estimator__min_samples_split': [2, 3],
+        'clf__estimator__warm_start': [True, False]
     }
 
     cv = GridSearchCV(pipeline, parameters)
