@@ -35,9 +35,9 @@ The model returns the most possible categories of the messages, which will then 
 ```
 
 # Results
-Below is a snapshot of the main page
+- Below is a snapshot of the main page
 ![mainpage](https://github.com/anqi-guo/udacity-dsnd-project2/blob/main/app/mainpage.png)
-Below is a snapshot of the classification result page
+- Below is a snapshot of the classification result page
 ![resultpage](https://github.com/anqi-guo/udacity-dsnd-project2/blob/main/app/resultpage.png)
 
 # Commands
